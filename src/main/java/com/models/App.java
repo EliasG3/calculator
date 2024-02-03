@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 public class App extends Application{
 
-    private Calculator calculator;
+    private ThreeInARow threeInARow;
 
     public static void main(String[] args) {
         launch();
@@ -22,13 +22,13 @@ public class App extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        this.calculator = new Calculator();
+        this.threeInARow = new ThreeInARow();
         URL url = getClass().getResource("/fxml/MainView.fxml");
         FXMLLoader loader = new FXMLLoader(url);
         Scene scene = new Scene(loader.load());
 
         MainViewController controller = loader.getController();
-        controller.setMainViewController(calculator);
+        controller.setMainViewController(threeInARow);
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("Calculator");
